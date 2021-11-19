@@ -45,35 +45,29 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.testfx</groupId>
             <artifactId>testfx-junit5</artifactId>
-            <version>${org.testfx.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.testfx</groupId>
             <artifactId>testfx-junit</artifactId>
-            <version>${org.testfx.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.testfx</groupId>
             <artifactId>testfx-core</artifactId>
-            <version>${org.testfx.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.testfx</groupId>
             <artifactId>openjfx-monocle</artifactId>
-            <version>jdk-12.0.1+2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -85,8 +79,8 @@
                 <version>1.5.1</version>
                 <configuration>
                     <name>fxsurveyor</name>
-                    <appVersion>1.0.0</appVersion>
-                    <vendor>io.github.sevenlo</vendor>
+                    <appVersion>1.0.1</appVersion>
+                    <vendor>io.github.homberghp</vendor>
                     <destination>target/dist</destination>
                     <module>surveyor/surveyor.SurveyorApp</module>
                     <runtimeImage>target/surveyor</runtimeImage>
@@ -96,7 +90,7 @@
                     <linuxMenuGroup>Utilities</linuxMenuGroup>
                     <!--<icon>${project.basedir}/duke.png</icon>-->
                     <javaOptions>
-                        <option>-Dfile.encoding=UTF-8</option>
+                        <option>-Dfile.encoding=${project.build.sourceEncoding}</option>
                     </javaOptions>
                 </configuration>
             </plugin>
