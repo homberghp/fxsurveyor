@@ -15,12 +15,12 @@
     </description>
     <groupId>io.github.homberghp.surveyor</groupId>
     <artifactId>surveyor</artifactId>
-    <version>4.0.4</version>
+    <version>1.0.1</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <javafx.version>16</javafx.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <javafx.version>17</javafx.version>
         <org.testfx.version>4.0.15-alpha</org.testfx.version>
         <exec.mainClass>surveyor/surveyor.SurveyorApp</exec.mainClass>
         <surefire.opens>
@@ -37,9 +37,9 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>nl.fontys.homberghp.surveyor</groupId>
+            <groupId>io.github.homberghp.surveyor</groupId>
             <artifactId>fxtriangulate</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>1.0.1</version>
             <type>jar</type>
         </dependency>
         <dependency>
