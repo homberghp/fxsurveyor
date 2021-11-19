@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        
+        <groupId>nl.fontys.homberghp.surveyor</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.1</version>
+        <relativePath>../</relativePath>
+    </parent>
+    <description>
+        Surveyor is a toy app that plays a bit with the math on surveying.
+    </description>
+    <groupId>io.github.homberghp.surveyor</groupId>
+    <artifactId>surveyor</artifactId>
+    <version>4.0.4</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <javafx.version>16</javafx.version>
+        <org.testfx.version>4.0.15-alpha</org.testfx.version>
+        <exec.mainClass>surveyor/surveyor.SurveyorApp</exec.mainClass>
+        <surefire.opens>
+            <!-- add add-opens lines for **ALL** packages in your module that are tested.
+                For testing it is fine to open your packages for the whole world, which includes
+                e.g. junit, assertj, mockito, and jacoco, to name a few.
+                Also leave  because it is set/used by the coverage plugin.
+            -->
+            --add-opens surveyor/surveyor=ALL-UNNAMED 
+            --add-opens javafx.graphics/com.sun.glass.ui=ALL-UNNAMED
+            --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
+            --add-exports javafx.graphics/com.sun.glass.ui.delegate=ALL-UNNAMED
+        </surefire.opens>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>nl.fontys.sebivenlo</groupId>
+            <artifactId>fxtriangulate</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testfx</groupId>
+            <artifactId>testfx-junit5</artifactId>
+            <version>${org.testfx.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testfx</groupId>
+            <artifactId>testfx-junit</artifactId>
+            <version>${org.testfx.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testfx</groupId>
+            <artifactId>testfx-core</artifactId>
+            <version>${org.testfx.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testfx</groupId>
+            <artifactId>openjfx-monocle</artifactId>
+            <version>jdk-12.0.1+2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.panteleyev</groupId>
+                <artifactId>jpackage-maven-plugin</artifactId>
+                <version>1.5.1</version>
+                <configuration>
+                    <name>fxsurveyor</name>
+                    <appVersion>1.0.0</appVersion>
+                    <vendor>io.github.sevenlo</vendor>
+                    <destination>target/dist</destination>
+                    <module>surveyor/surveyor.SurveyorApp</module>
+                    <runtimeImage>target/surveyor</runtimeImage>
+                    <linuxShortcut>true</linuxShortcut>
+                    <linuxPackageName>fxsurveyor</linuxPackageName>
+                    <linuxAppCategory>Utilities</linuxAppCategory>
+                    <linuxMenuGroup>Utilities</linuxMenuGroup>
+                    <!--<icon>${project.basedir}/duke.png</icon>-->
+                    <javaOptions>
+                        <option>-Dfile.encoding=UTF-8</option>
+                    </javaOptions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+

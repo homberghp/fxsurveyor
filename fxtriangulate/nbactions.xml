@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-run</actionName>
+            <displayName>run</displayName>
+            <goals>
+                <goal>org.openjfx:javafx-maven-plugin:0.0.5:run</goal>
+            </goals>
+            <properties>
+                <exec.mainClass>fxtrinagulate/demo.App</exec.mainClass>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-runfx</actionName>
+            <displayName>runfx</displayName>
+            <goals>
+                <goal>org.openjfx:javafx-maven-plugin:0.0.5:run</goal>
+            </goals>
+            <properties>
+                <exec.mainClass>fxtriangulate/demo.App</exec.mainClass>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>fx</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>CUSTOM-test-javadoc</actionName>
+            <displayName>test-javadoc</displayName>
+            <goals>
+                <goal>javadoc:test-javadoc</goal>
+            </goals>
+            <properties>
+                <show>private</show>
+            </properties>
+        </action>
+    </actions>

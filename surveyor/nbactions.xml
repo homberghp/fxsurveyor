@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-runfx</actionName>
+            <displayName>runfx</displayName>
+            <goals>
+                <goal>javafx:run</goal>
+            </goals>
+            <activatedProfiles>
+                <activatedProfile>fx</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>javafx:run</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath ${packageClassName}</exec.args>
+                <exec.executable>java</exec.executable>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>fx</activatedProfile>
+            </activatedProfiles>
+        </action>
+    </actions>
