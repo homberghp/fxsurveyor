@@ -16,6 +16,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javafx.release>17.0.1</javafx.release>
+        <javafx-maven-plugin-version>0.0.8</javafx-maven-plugin-version>
     </properties>
     <modules>
         <module>fxtriangulate</module>
