@@ -37,7 +37,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>nl.fontys.sebivenlo</groupId>
+            <groupId>nl.fontys.homberghp.surveyor</groupId>
             <artifactId>fxtriangulate</artifactId>
             <version>1.0.1-SNAPSHOT</version>
             <type>jar</type>
